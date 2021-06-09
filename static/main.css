@@ -1,0 +1,75 @@
+body,html{
+    margin: 0;
+    font-family: sans-serif;
+    font-weight: normal;
+    letter-spacing: 4px;
+    color: #555;
+    background-color: #e3edf7;
+}
+
+.content{
+    margin: 0 auto;
+    width: 400px;
+}
+
+.form{
+    margin: 5px;
+}
+
+#content{
+    width: 70%;
+    align-items: center;
+}
+
+h1{
+    text-align: center;
+}
+
+.form-group{
+    position: relative;
+    left: 39%;
+}
+
+
+.inputa{
+    position: relative;
+    left: 37%;
+    align-items: center;
+    padding: 5px 10px;
+    background: #e3edf7 ;
+    height: 35px;
+    width: auto;
+    border-radius: 20px;
+    margin: 0 15px;
+    text-decoration: none;
+    box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.15),
+                -6px -6px 10px -1px rgba(255,255,255,0.5);
+    border: 1px solid rgba(0,0,0,0.01);    
+}
+
+
+
+.inputa:hover{
+    box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.15),
+                inset -4px -4px 6px -1px rgba(255,255,255,0.7),
+                -0.5px -0.5px 0px rgba(255,255,255,1),
+                0.5px 0.5px 0px  rgba(0, 0, 0, 0.15),
+                0px 12px 10px -10px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.01);
+    cursor: pointer;
+    
+}
+
+.textbox{
+    position: relative;
+    left: 37%;
+    padding: 8px 10px ;
+    background-color: #e3edf7;
+    border: 1px solid rgba(0,0,0,0.01);
+    border-radius: 15px;
+    box-shadow:  inset 2px 2px 5px #babecc, inset -5px -5px 10px #e3edf7;
+    width: 20%;
+    transition: all 0.2s ease-in-out;
+    
+}
+

@@ -4,19 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='main.css')}}">
     <title>Add component</title>
 </head>
 <body>
     <div class="container">
         <h2 style='text-align: center;'>Upload photo</h2>
-        <br><br>
+        <br><br><br>
         <div class="row">
             <form method="post" action="/add_component/" enctype="multipart/form-data" class="form-inline">
                 <div class="form-group">
                     <label>Choose Images: </label>
                     <input type="file" name="file" id="fileInput" class="form-control" required>
                 </div>
-                <input name="text" type="text">
+                <br>
+                <br>
+                <input name="text" type="text" class="textbox">
                 <input class="inputa" type="submit" name="submit" value="Submit" id="submit"/>
             </form>
         </div>
