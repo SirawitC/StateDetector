@@ -1,10 +1,9 @@
-
 from flask import Flask,request,redirect,render_template
 from flask_sqlalchemy import SQLAlchemy
 import os
 import cv2
 import time as t
-
+import psycopg2
 
 #UPLOAD_FOLDER = '/home/sirawit/state_detector/static/component'
 UPLOAD_FOLDER = os.getenv('UPLOAD_FOLDER','/app/static/component')
@@ -12,7 +11,7 @@ UPLOAD_SCREEN = os.getenv('UPLOAD_SCREEN','/app/static/screen')
 #UPLOAD_SCREEN = '/home/sirawit/state_detector/static/screen'
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///database.db"
+app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://postgres:banana@db:5432/database"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['UPLOAD_SCREEN'] = UPLOAD_SCREEN
@@ -35,20 +34,20 @@ def hello():
 @app.route('/add_component/',methods=['POST','GET'])
 def add():
     if request.method == 'POST':
-        try:
+        #try:
             state = request.form['text']
             static = request.files.get('file')
             #image = request.files['file'].read()
             new_comp = comp(state=state)
-            try:
-                db.session.add(new_comp)
-                db.session.commit()
-                static.save(os.path.join(app.config['UPLOAD_FOLDER'],state+".png"))
-                return redirect('/add_component/')
-            except:
-                return "some error occur"
-        except:
-            return "Something went wrong"
+            #try:
+            db.session.add(new_comp)
+            db.session.commit()
+            static.save(os.path.join(app.config['UPLOAD_FOLDER'],state+".png"))
+            return redirect('/add_component/')
+            #except:
+                #return "some error occur"
+        #except:
+            #return "Something went wrong"
         
     else:
         return render_template('index.html')
